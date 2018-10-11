@@ -1,9 +1,9 @@
 package washing_machine_state_pattern;
 
 public interface WashingMachineState {    
-	public openLid(WashingMachine machine);
-	public closeLid(WashingMachine machine);
-	public pushOnBtn(WashingMachine machine);
-	public pushStartBtn(WashingMachine machine);
-	public pushStopBtn(WashingMachine machine);
+	public void openLid(WashingMachine machine);
+	public void closeLid(WashingMachine machine);
+	public void pushOnBtn(WashingMachine machine);
+	public void pushStartBtn(WashingMachine machine);
+	public void pushStopBtn(WashingMachine machine);
 } 
