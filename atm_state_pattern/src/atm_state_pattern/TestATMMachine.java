@@ -4,6 +4,7 @@ public class TestATMMachine {
 
 	public static void main(String[] args) {
 		ATMMachine atmMachine = new ATMMachine();
+		atmMachine.setCashInMachine(5000);
 		atmMachine.insertCard();
 		atmMachine.ejectCard();
 		atmMachine.insertCard();
