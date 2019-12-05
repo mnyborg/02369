@@ -1,5 +1,8 @@
+import com.google.inject.Inject;
+
 public class MyPart {
-    @Inject private Logger logger;
+    @Inject
+    private Logger logger;
 
 
 
