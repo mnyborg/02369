@@ -1,6 +1,6 @@
 package washing_machine_state_pattern_with_adapter;
 
-public class WashingMachineStateAdapter implements WashingMachineState {
+public class WashingMachineStateEventsAdapter implements WashingMachineStateEvents {
     @Override
     public void openLid(WashingMachine machine) {
 
