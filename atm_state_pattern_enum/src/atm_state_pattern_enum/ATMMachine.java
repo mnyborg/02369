@@ -1,35 +1,30 @@
 package atm_state_pattern_enum;
 
 public class ATMMachine {
-//	ATMState hasCard;    
-//	ATMState noCard;
-//	ATMState hasCorrectPin;
-//	ATMState atmOutOfMoney;
-	 
-	private ATMState state;
+	// private ATMStates state;
+	private ATMStateActions atmStateActions = ATMStateActions.NOCARD;
+	
 
-	
+	// ATM machine properties
 	int cashInMachine = 2000;
-	boolean correctPinEntered = false;
+
+    boolean correctPinEntered = false;
 	 
-	public ATMMachine(){     
-//	    hasCard = new HasCard(this);
-//	    noCard = new NoCard(this);
-//	    hasCorrectPin = new HasPin(this);
-//	    atmOutOfMoney = new NoCash(this);
-	     
-		
-		state = ATMState.NOCARD;
-	   
-	
-	     
+	public ATMMachine(){
+        ATMStateActions.atmMachine=this;
+      //  ATMStateActions.INSERTCARD.setATMMachine(this);
+
+
 	    if(cashInMachine < 0) {
-	    
 	    }	     
 	}
-	 
-	void setATMState(ATMState newATMState) {
-	    state = newATMState;
+
+    public void setCorrectPinEntered(boolean correctPinEntered) {
+        this.correctPinEntered = correctPinEntered;
+    }
+
+	void setATMState(ATMStateActions newATMState) {
+        atmStateActions = newATMState;
 	}
 	 
 	public void setCashInMachine(int newCashInMachine) {	     
@@ -37,23 +32,16 @@ public class ATMMachine {
 	}
 	 
 	public void insertCard() {
-	    state.insertCard();
+		atmStateActions.doAction("insert");
 	}
 	
-	public void ejectCard() {     
-	    atmState.ejectCard();
+	public void ejectCard() {
+        atmStateActions.doAction("insert");
 	}
 	
-	public void requestCash(int cashToWithdraw) {     
-	    atmState.requestCash(cashToWithdraw);
-	}
+	public void requestCash(int cashToWithdraw) {
+        atmStateActions.doAction("insert");	}
 	
-	public void insertPin(int pinEntered){     
-	    atmState.insertPin(pinEntered);
-	}
-	 
-	public ATMState getYesCardState() { return hasCard; }
-	public ATMState getNoCardState() { return noCard; }
-	public ATMState getHasPin() { return hasCorrectPin; }
-	public ATMState getNoCashState() { return atmOutOfMoney; }
+	public void insertPin(int pinEntered){
+        atmStateActions.doAction("insert");	}
 }
