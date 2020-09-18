@@ -1,6 +1,6 @@
 package washing_machine_state_pattern;
 
-public class StopStateEvents implements WashingMachineStateEvents {
+public class StopState implements WashingMachineState {
 
 	@Override
 	public void openLid(WashingMachine machine) {
@@ -26,6 +26,6 @@ public class StopStateEvents implements WashingMachineStateEvents {
 		machine.setTurnedOn(true);
 		
 		// change to idle state
-		machine.changeState(new IdleStateEvents());
+		machine.changeState(new IdleState());
 	}
 }
