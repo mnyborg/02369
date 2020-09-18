@@ -2,17 +2,17 @@ package washing_machine_state_pattern_with_adapter;
 
 public class WashingMachine  {
 
-	private WashingMachineStateEvents state;
+	private WashingMachineState state;
 	
 	boolean turnedOn;
 
 	public WashingMachine() {
 		// initial state
-		this.state =  new StopStateEvents();
+		this.state =  new StopState();
 		turnedOn = false;
 	}        
 
-	protected  void changeState(WashingMachineStateEvents state) {
+	protected  void changeState(WashingMachineState state) {
 		this.state = state;      
 	}
 
@@ -36,7 +36,7 @@ public class WashingMachine  {
 		state.pushStopBtn(this);
 	} 
 
-	public WashingMachineStateEvents getState() {
+	public WashingMachineState getState() {
 		return state;
 	}
 	

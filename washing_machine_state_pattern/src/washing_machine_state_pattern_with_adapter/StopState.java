@@ -1,6 +1,6 @@
 package washing_machine_state_pattern_with_adapter;
 
-public class StopStateEvents extends WashingMachineStateEventsAdapter {
+public class StopState extends WashingMachineStateAdapter {
 
 	@Override
 	public void pushOnBtn(WashingMachine machine) {
@@ -10,6 +10,6 @@ public class StopStateEvents extends WashingMachineStateEventsAdapter {
 		machine.setTurnedOn(true);
 		
 		// change to idle state
-		machine.changeState(new IdleStateEvents());
+		machine.changeState(new IdleState());
 	}
 }
